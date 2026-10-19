@@ -66,4 +66,17 @@ Captura del depurador: capturas/reto3.png
 
 ## Reto 5 · ¿Qué lenguaje elegirías?
 - Caso A (web de la tienda):
+  - **Tipo de lenguaje:** **Interpretado** (específicamente **JavaScript** o TypeScript transpilado a JavaScript).
+  - **Justificación:**
+    1. **Tipo de proyecto y entorno de ejecución:** El objetivo es que la aplicación corra directamente en el navegador web del cliente. JavaScript es el estándar universal e interpretado nativamente por todos los navegadores web (Chrome, Firefox, Safari, Edge) sin requerir instalación de entornos, plugins ni máquinas virtuales adicionales por parte del usuario final.
+    2. **Portabilidad:** Máxima portabilidad multiplataforma. El mismo código fuente se ejecuta de forma transparente en cualquier dispositivo (ordenadores de escritorio, portátiles, tablets o smartphones) y bajo cualquier sistema operativo (Windows, macOS, Linux, Android, iOS) siempre que cuente con un navegador web moderno.
+    3. **Coste y tiempo de desarrollo:** El desarrollo de formularios dinámicos y cálculo en tiempo real en la web es rápido, económico y sencillo de mantener gracias a la integración nativa con el DOM (HTML/CSS) y el amplio catálogo de librerías disponibles.
+    4. **Rendimiento:** Para una calculadora de facturación, la carga de procesamiento es insignificante (se resuelve en microsegundos). No se requiere computación de alto rendimiento ni tiempo real crítico, por lo que los motores de los navegadores (como V8) ofrecen una velocidad óptima e instantánea para la experiencia de usuario.
+
 - Caso B (propuesta en ensamblador):
+  - **Tipo de lenguaje:** **Lenguaje de alto nivel mixto (como Java)** o compilado, **rechazando tajantemente el uso de ensamblador**.
+  - **Justificación y refutación de la propuesta:**
+    1. **Portabilidad (premisa del compañero falsa):** La afirmación de que irá más rápido «en cualquier ordenador» ignora que el lenguaje ensamblador **no es portable**. Está directamente ligado a una arquitectura física de procesador concreta (x86, x86_64, ARM, etc.) y a las llamadas al sistema del SO. Un ejecutable en ensamblador para Intel/AMD x86 no funciona en procesadores ARM (como móviles o Apple Silicon). En cambio, un lenguaje mixto como **Java** garantiza portabilidad total («Write Once, Run Anywhere») mediante la JVM y el bytecode.
+    2. **Coste y tiempo de desarrollo:** Programar en ensamblador implica gestionar registros, memoria y llamadas al sistema a muy bajo nivel. Desarrollar la entrada/salida de datos por teclado, el formateo de números decimales y las operaciones aritméticas en ensamblador dispararía los costes, multiplicaría el tiempo de desarrollo y dificultaría enormemente el mantenimiento y la depuración del código.
+    3. **Rendimiento o tiempo real:** El cuello de botella de esta calculadora es el tiempo de respuesta humano (esperar a que el usuario introduzca los datos por teclado). La hipotética ganancia de unos pocos ciclos de reloj al calcular el 10 % o el 21 % de IVA es imperceptible para un ser humano (del orden de nanosegundos). El ensamblador solo tiene sentido en sistemas embebidos de recursos extremadamente limitados o controladores de hardware en tiempo real crítico, no en aplicaciones de gestión comercial.
+    4. **Tipo de proyecto:** Para una aplicación empresarial o de gestión comercial, las prioridades son la legibilidad, la robustez, la facilidad de mantenimiento y la seguridad de tipos, aspectos donde los lenguajes de alto nivel son infinitamente superiores.

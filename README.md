@@ -1,5 +1,5 @@
 # Tarea 3 · La factura bajo el microscopio
-Pareja: Manuel Bono Torres y Gonzalo · GitHub: Zombneitor123, gonzaloaragar-svg
+Pareja: Manuel Bono Torres y Gonzalo Aragón García · GitHub: Zombneitor123, gonzaloaragar-svg
 
 ## Reto 1 · Compilar desde la terminal
 - Comando usado y resultado (captura: capturas/reto1.png)
@@ -19,9 +19,14 @@ Pareja: Manuel Bono Torres y Gonzalo · GitHub: Zombneitor123, gonzaloaragar-svg
 ## Reto 2 · Errores de compilación
 | Nº | Línea | Mensaje de javac | Tipo (léxico / sintaxis / semántica) | Corrección |
 |----|-------|------------------|--------------------------------------|------------|
-| 1  |       |                  |                                      |            |
-| 2  |       |                  |                                      |            |
-| 3  |       |                  |                                      |            |
+| 1  | 15    | `error: illegal character: '#'` | Léxico | Eliminar el carácter `#` del identificador: `double precio = sc.nextDouble();` |
+| 2  | 17    | `error: ';' expected` | Sintaxis | Añadir el punto y coma `;` al final de la sentencia: `int cantidad = sc.nextInt();` |
+| 3  | 29    | `error: incompatible types: possible lossy conversion from double to int` | Semántica | Cambiar el tipo de la variable `total` de `int` a `double`: `double total = (base - descuento) * (1 + IVA);` |
+
+- **Cálculo manual frente al resultado obtenido (`precio = 60`, `cantidad = 2`, `socio = s`):**
+  - El programa muestra un descuento de `6,00 €` y un total de **`137,94 €`**, pero contiene un error lógico.
+  - Calculado a mano con las reglas: `base = 60 × 2 = 120,00 €`. Al superar 100 € corresponde un 10 % (`12,00 €`) más un 5 % por ser socio (`6,00 €`), sumando **`18,00 €`** de descuento. El total con IVA (21 %) debería ser `(120 - 18) × 1,21 =` **`123,42 €`**.
+
 Captura del programa funcionando: capturas/reto2.png
 
 ## Reto 3 · Depuración del error lógico

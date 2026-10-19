@@ -32,11 +32,26 @@ Captura del programa funcionando: capturas/reto2.png
 ## Reto 3 · Depuración del error lógico
 | Variable | Valor esperado | Valor real |
 |----------|----------------|------------|
-| descuento |               |            |
-| total     |               |            |
+| descuento | 18,00 €        | 6,00 €     |
+| total     | 123,42 €       | 137,94 €   |
+
 - Línea del error y explicación:
+  - **Línea 27:** `descuento = base * 0.05;`
+  - **Explicación:** Al entrar en el segundo `if` (`socio.equals("s")`), se reasignaba el valor de `descuento` directamente en vez de sumarlo al descuento previo. Con ello se perdía el descuento del 10 % (12,00 €) calculado en el primer `if` y solo se aplicaba el 5 % de socio (6,00 €), incumpliendo la regla que exige que ambos descuentos se sumen (15 % total).
 - Corrección:
+  - Se cambió la asignación directa por suma y asignación (`+=`):
+    ```java
+    if (socio.equals("s")) {
+        descuento += base * 0.05;
+    }
+    ```
 - Mi propia prueba (producto, precio, cantidad, socio → total):
+  - **Producto:** Monitor
+  - **Precio unitario:** 40,00 €
+  - **Cantidad:** 5
+  - **Socio:** s
+  - **Desglose:** Base = 200,00 €; Descuento = 30,00 € (20,00 € por superar 100 € + 10,00 € por socio); **Total con IVA (21 %): 205,70 €**.
+
 Captura del depurador: capturas/reto3.png
 
 ## Reto 4 · Reutilización

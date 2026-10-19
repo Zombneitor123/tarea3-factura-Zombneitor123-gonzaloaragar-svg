@@ -56,7 +56,13 @@ Captura del depurador: capturas/reto3.png
 
 ## Reto 4 · Reutilización
 - Métodos creados y para qué sirve cada uno:
+  - **`static double calcularDescuento(double base, boolean socio)`**: Recibe el importe base de la compra y un valor booleano que indica si el cliente es socio. Calcula y devuelve el descuento total acumulado (10 % si la base supera 100 € y un 5 % adicional si es socio).
+  - **`static double aplicarIVA(double importe)`**: Recibe el importe neto (la base menos el descuento) y devuelve el total final tras sumarle el 21 % de IVA (`importe * (1 + IVA)`).
+  - **`static double pedirDecimal(Scanner sc, String mensaje)`** *(opcional)*: Muestra por pantalla el mensaje indicado y lee un número decimal mediante `sc.nextDouble()`, evitando repetir la combinación `print` + `nextDouble`.
 - ¿Qué ventaja tiene frente al código anterior?
+  - **Modularidad y legibilidad:** El método `main` queda mucho más limpio y fácil de entender, ya que solo coordina la entrada de datos, las llamadas a las funciones y la salida por pantalla.
+  - **Reutilización sin duplicar código:** Si necesitamos calcular descuentos, aplicar el IVA o pedir decimales en varias partes del programa (por ejemplo, para procesar varios productos o facturas), basta con invocar al método sin copiar y pegar las fórmulas.
+  - **Mantenibilidad y facilidad para depurar:** Si en el futuro cambian las reglas de negocio (como el porcentaje de descuento o el tipo de IVA), solo hay que modificar el método correspondiente en un único lugar, reduciendo el riesgo de introducir errores lógicos.
 
 ## Reto 5 · ¿Qué lenguaje elegirías?
 - Caso A (web de la tienda):

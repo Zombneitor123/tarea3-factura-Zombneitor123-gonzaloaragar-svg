@@ -80,3 +80,9 @@ Captura del depurador: capturas/reto3.png
     2. **Coste y tiempo de desarrollo:** Programar en ensamblador implica gestionar registros, memoria y llamadas al sistema a muy bajo nivel. Desarrollar la entrada/salida de datos por teclado, el formateo de números decimales y las operaciones aritméticas en ensamblador dispararía los costes, multiplicaría el tiempo de desarrollo y dificultaría enormemente el mantenimiento y la depuración del código.
     3. **Rendimiento o tiempo real:** El cuello de botella de esta calculadora es el tiempo de respuesta humano (esperar a que el usuario introduzca los datos por teclado). La hipotética ganancia de unos pocos ciclos de reloj al calcular el 10 % o el 21 % de IVA es imperceptible para un ser humano (del orden de nanosegundos). El ensamblador solo tiene sentido en sistemas embebidos de recursos extremadamente limitados o controladores de hardware en tiempo real crítico, no en aplicaciones de gestión comercial.
     4. **Tipo de proyecto:** Para una aplicación empresarial o de gestión comercial, las prioridades son la legibilidad, la robustez, la facilidad de mantenimiento y la seguridad de tipos, aspectos donde los lenguajes de alto nivel son infinitamente superiores.
+
+---
+## Entrega
+- **URL del repositorio:** https://github.com/Zombneitor123/tarea3-factura-Zombneitor123-gonzaloaragar-svg
+- **Miembros del equipo:** Manuel Bono Torres (`Zombneitor123`) y Gonzalo Aragón García (`gonzaloaragar-svg`)
+

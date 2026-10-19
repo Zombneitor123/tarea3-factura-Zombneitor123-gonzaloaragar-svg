@@ -26,7 +26,7 @@ public class Factura {
         if (socio.equals("s")) {
             descuento = base * 0.05;
         }
-        int total = (base - descuento) * (1 + IVA);
+        double total = (base - descuento) * (1 + IVA);
 
         System.out.println("Producto: " + producto);
         System.out.printf("Base: %.2f euros%n", base);
